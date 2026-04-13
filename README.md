@@ -99,13 +99,6 @@ heroku run python manage.py migrate
 
 See `GETTING_STARTED.md` for detailed deployment instructions.
 
-## 📸 Screenshots
-
-*Add screenshots here after running the application*
-
-## 🎥 Demo
-
-*Add demo video link here*
 
 ## 🤝 Contributing
 
