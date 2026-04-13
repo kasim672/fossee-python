@@ -60,7 +60,7 @@ Draft → Proposed → Under Review → Approved → Published → Ongoing → C
 
 ### 1. Clone the Repository
 ```bash
-git clone 
+git clone https://github.com/kasim672/fossee-python
 cd workshop_portal_enhanced
 ```
 
