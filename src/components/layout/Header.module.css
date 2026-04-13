@@ -1,0 +1,126 @@
+.header {
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  gap: var(--space-4);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-gray-900);
+}
+
+.logoText {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.logoSubtext {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.navLink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-gray-700);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  /* Touch-friendly size */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.navLink:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-primary);
+}
+
+.navLink.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  /* Touch-friendly size */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 24px;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  background-color: var(--color-gray-900);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .mobileMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    padding: var(--space-4);
+    box-shadow: var(--shadow-lg);
+    gap: var(--space-2);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .navListOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: center;
+  }
+}
