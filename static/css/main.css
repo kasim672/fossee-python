@@ -1,0 +1,65 @@
+/* Workshop Portal 2.0 - Custom Styles */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.workshop-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.workshop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.status-badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+}
+
+.status-draft {
+    background-color: var(--secondary-color);
+}
+
+.status-pending {
+    background-color: var(--warning-color);
+}
+
+.status-approved {
+    background-color: var(--success-color);
+}
+
+.status-published {
+    background-color: var(--primary-color);
+}
+
+.status-completed {
+    background-color: #6c757d;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .workshop-card {
+        margin-bottom: 1rem;
+    }
+}

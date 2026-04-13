@@ -60,7 +60,7 @@ Draft → Proposed → Under Review → Approved → Published → Ongoing → C
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone 
 cd workshop_portal_enhanced
 ```
 

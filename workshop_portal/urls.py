@@ -2,13 +2,20 @@
 URL configuration for workshop_portal project.
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
+    
+    # Redirect root to workshops
+    path('', RedirectView.as_view(url='/workshops/', permanent=False)),
+    
+    # Apps
+    path('workshops/', include('workshops.urls')),
 ]
 
 # Serve media files in development
