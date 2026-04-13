@@ -9,6 +9,7 @@ This project is a complete UI/UX overhaul of the workshop booking system, design
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ and npm/yarn
 - Git
 
@@ -35,18 +36,21 @@ npm run preview
 ## 📱 Design Principles
 
 ### 1. Mobile-First Approach
+
 - Designed for 320px screens first, progressively enhanced for larger displays
 - Touch-friendly interface with minimum 44x44px tap targets
 - Optimized for one-handed mobile usage
 - Bottom navigation for easy thumb access
 
 ### 2. Performance-Driven
+
 - Code splitting and lazy loading for optimal bundle size
 - Image optimization with responsive srcsets
 - Minimal JavaScript footprint
 - Target: < 3s Time to Interactive on 3G networks
 
 ### 3. Accessibility-First
+
 - WCAG 2.1 Level AA compliance
 - Semantic HTML structure
 - Full keyboard navigation support
@@ -54,12 +58,14 @@ npm run preview
 - High contrast ratios (4.5:1 minimum)
 
 ### 4. Visual Hierarchy
+
 - Clear information architecture
 - Consistent spacing system (8px base unit)
 - Typography scale for readability
 - Strategic use of color for emphasis
 
 ### 5. Progressive Enhancement
+
 - Core functionality works without JavaScript
 - Enhanced experience with modern features
 - Graceful degradation for older browsers
@@ -67,6 +73,7 @@ npm run preview
 ## 📐 Responsiveness Strategy
 
 ### Breakpoint System
+
 ```css
 Mobile:  320px - 767px  (primary focus)
 Tablet:  768px - 1023px (enhanced layout)
@@ -74,6 +81,7 @@ Desktop: 1024px+        (full experience)
 ```
 
 ### Responsive Techniques
+
 - **Fluid Typography**: clamp() for scalable text
 - **Flexible Layouts**: CSS Grid and Flexbox
 - **Responsive Images**: srcset and sizes attributes
@@ -81,6 +89,7 @@ Desktop: 1024px+        (full experience)
 - **Touch Optimization**: Larger tap targets, swipe gestures
 
 ### Testing Approach
+
 - Tested on real devices (iPhone SE, Android mid-range)
 - Chrome DevTools device emulation
 - Responsive design mode in Firefox
@@ -89,31 +98,41 @@ Desktop: 1024px+        (full experience)
 ## ⚖️ Design vs Performance Trade-offs
 
 ### Trade-off 1: Animations
+
 **Decision**: Minimal, purposeful animations only
+
 - **Why**: Animations can impact performance on low-end devices
 - **Solution**: CSS transforms (GPU-accelerated), reduced motion support
 - **Result**: Smooth 60fps animations without JavaScript overhead
 
 ### Trade-off 2: Image Quality
+
 **Decision**: WebP format with JPEG fallback, progressive loading
+
 - **Why**: Balance visual quality with load times
 - **Solution**: Multiple image sizes, lazy loading, blur-up technique
 - **Result**: 60% smaller images, faster perceived performance
 
 ### Trade-off 3: Component Library
+
 **Decision**: Custom components instead of heavy UI libraries
+
 - **Why**: Material-UI/Ant Design add 200KB+ to bundle
 - **Solution**: Built lightweight, purpose-specific components
 - **Result**: Total bundle < 150KB gzipped
 
 ### Trade-off 4: State Management
+
 **Decision**: React Context + hooks instead of Redux
+
 - **Why**: Simpler codebase, smaller bundle, sufficient for app complexity
 - **Solution**: Organized context providers, custom hooks
 - **Result**: Reduced complexity, easier maintenance
 
 ### Trade-off 5: SEO vs SPA
+
 **Decision**: React with proper meta management
+
 - **Why**: Need SPA benefits but also SEO
 - **Solution**: React Helmet, semantic HTML, SSR-ready architecture
 - **Result**: SEO-friendly SPA with fast navigation
@@ -121,6 +140,7 @@ Desktop: 1024px+        (full experience)
 ## 🎨 Most Challenging Part
 
 ### Challenge: Mobile Form Experience
+
 **The Problem**: Workshop booking forms are complex with multiple fields, date pickers, and validation. On mobile, forms are notoriously difficult to complete, leading to high abandonment rates.
 
 **My Approach**:
@@ -154,17 +174,20 @@ Desktop: 1024px+        (full experience)
 ## 📊 Performance Metrics
 
 ### Lighthouse Scores (Mobile)
+
 - Performance: 95+
 - Accessibility: 100
 - Best Practices: 100
 - SEO: 100
 
 ### Core Web Vitals
+
 - LCP (Largest Contentful Paint): < 2.5s
 - FID (First Input Delay): < 100ms
 - CLS (Cumulative Layout Shift): < 0.1
 
 ### Bundle Size
+
 - Initial JS: ~120KB gzipped
 - Initial CSS: ~15KB gzipped
 - Total First Load: ~135KB
@@ -196,6 +219,7 @@ workshop_booking/
 ## 🎨 Design System
 
 ### Color Palette
+
 ```css
 Primary:   #2563eb (Blue - trust, professionalism)
 Secondary: #7c3aed (Purple - creativity)
@@ -206,11 +230,13 @@ Neutral:   #64748b (Slate - text, borders)
 ```
 
 ### Typography
+
 - **Headings**: Inter (system font fallback)
 - **Body**: System font stack for performance
 - **Scale**: 1.25 (Major Third)
 
 ### Spacing System
+
 Based on 8px grid: 4px, 8px, 16px, 24px, 32px, 48px, 64px
 
 ## 🧪 Testing
@@ -228,23 +254,79 @@ npm run lighthouse
 
 ## 📸 Before & After
 
-### Before
-![Original Design](docs/screenshots/before-home.png)
-![Original Mobile](docs/screenshots/before-mobile.png)
+### Home Page
 
-### After
-![New Design](docs/screenshots/after-home.png)
-![New Mobile](docs/screenshots/after-mobile.png)
+**Before (Original FOSSEE Design)**
+![Original Home Desktop](docs/screenshots/before-home-desktop.png)
 
-## 🚀 Deployment
+**After - Desktop View**
+![New Home Desktop](docs/screenshots/after-home-desktop.png)
 
-Deployed on Vercel with automatic deployments from main branch.
+**After - Mobile View**
+![New Home Mobile](docs/screenshots/after-home-mobile.png)
 
-**Live Demo**: [Your Demo URL]
+**Key Improvements:**
+
+- Modern gradient hero section
+- Clear call-to-action buttons
+- Better visual hierarchy
+- Mobile-optimized layout
+- Touch-friendly navigation
+
+### Workshops Page
+
+**Before**
+![Original Workshops](docs/screenshots/before-workshops.png)
+
+**After - Desktop**
+![New Workshops Desktop](docs/screenshots/after-workshops-desktop.png)
+
+**After - Mobile**
+![New Workshops Mobile](docs/screenshots/after-workshops-mobile.png)
+
+**Key Improvements:**
+
+- Card-based layout for better scanning
+- Clear workshop information hierarchy
+- Level badges for quick identification
+- Responsive grid layout
+- Touch-friendly action buttons
+
+### Booking Form
+
+**Before**
+![Original Form](docs/screenshots/before-form.png)
+
+**After - Mobile**
+![New Form Mobile](docs/screenshots/after-form-mobile.png)
+
+**Key Improvements:**
+
+- Larger, touch-friendly inputs (48px height)
+- Clear validation messages
+- Better spacing for mobile
+- Appropriate keyboard types
+- Loading states
+
+## 🚀 Live Demo
+
+**Live Demo**: [Add your Vercel URL here after deployment]
+
+**Demo Video**: [Add YouTube/Loom link here - optional]
+
+### Quick Deploy to Vercel
+
+```bash
+npm install -g vercel
+vercel
+```
+
+Or visit https://vercel.com and import your GitHub repository.
 
 ## 📝 Development Process
 
 This project was developed following a phased approach with clear git history:
+
 - Phase 1: Analysis & Planning
 - Phase 2: Foundation & Setup
 - Phase 3: Core Components
@@ -285,4 +367,5 @@ This redesign is created as part of a screening task. Original project license a
 ---
 
 **Note**: This project demonstrates clean code practices, progressive development, and user-centered design thinking. Every decision was made with mobile users, performance, and accessibility in mind.
+
 # fossee-python
