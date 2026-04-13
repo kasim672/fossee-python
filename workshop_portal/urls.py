@@ -15,7 +15,10 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/workshops/', permanent=False)),
     
     # Apps
+    path('accounts/', include('accounts.urls')),
     path('workshops/', include('workshops.urls')),
+    path('stats/', include('stats.urls')),
+    path('notifications/', include('notifications.urls')),
 ]
 
 # Serve media files in development

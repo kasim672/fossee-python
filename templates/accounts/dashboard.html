@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Workshop Portal{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3 class="text-primary">{{ total_workshops }}</h3>
+                <p class="mb-0">Total Workshops</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3 class="text-secondary">{{ draft_workshops }}</h3>
+                <p class="mb-0">Drafts</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3 class="text-warning">{{ pending_workshops }}</h3>
+                <p class="mb-0">Pending</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h3 class="text-success">{{ approved_workshops }}</h3>
+                <p class="mb-0">Approved</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="card-title">Recent Workshops</h5>
+        
+        {% if recent_workshops %}
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for workshop in recent_workshops %}
+                            <tr>
+                                <td>{{ workshop.title }}</td>
+                                <td>{{ workshop.date|date:"M d, Y" }}</td>
+                                <td>
+                                    <span class="badge status-badge status-{{ workshop.status }}">
+                                        {{ workshop.get_status_display }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="/workshops/{{ workshop.id }}/" class="btn btn-sm btn-outline-primary">View</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="text-muted">No workshops yet. <a href="/workshops/create/">Create your first workshop</a></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
